@@ -1,14 +1,14 @@
 "use server";
 
-import { db } from "@/lib/prisma";
 import { industries } from "@/data/industries";
+import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 
 export async function updateUser(data) {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 
-  const user = await db.user.findUnique({
+  const User = await db.user.findUnique({
     where: {
       clerkUserId: userId,
     },
