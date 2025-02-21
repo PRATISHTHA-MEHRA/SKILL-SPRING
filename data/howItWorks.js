@@ -12,14 +12,14 @@ export const howItWorks = [
     icon: <FileEdit className="w-8 h-8 text-primary" />,
   },
   {
-    title: "Prepare for Interviews",
+    title: "Personalized Career Roadmap",
     description:
-      "Practice with AI-powered mock interviews tailored to your role",
+      "AI generates a step-by-step plan tailored to your skills, education, and career goals.",
     icon: <Users className="w-8 h-8 text-primary" />,
   },
   {
-    title: "Track Your Progress",
-    description: "Monitor improvements with detailed performance analytics",
+    title: "Smart Job Role Suggestions",
+    description: "AI recommends jobs that align with your strengths, interests, and industry trends.",
     icon: <LineChart className="w-8 h-8 text-primary" />,
   },
 ];

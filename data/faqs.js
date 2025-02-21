@@ -1,32 +1,23 @@
 export const faqs = [
   {
-    question: "What makes Sensai unique as a career development tool?",
+    question: "What makes Skill Spring unique as a career development tool?",
     answer:
-      "Sensai combines AI-powered career tools with industry-specific insights to help you advance your career. Our platform offers three main features: an intelligent resume builder, a cover letter generator, and an adaptive interview preparation system. Each tool is tailored to your industry and skills, providing personalized guidance for your professional journey.",
+      "Skill Spring stands out by offering personalized AI-driven career guidance in one integrated platform. Unlike generic career tools, we provide customized career roadmaps, AI-powered resume optimization, ATS score analysis, and industry-specific insights tailored to your skills and goals. Our platform ensures that every job seeker gets a roadmap that fits their unique journey, making career growth more efficient, data-driven, and personalized.",
   },
   {
-    question: "How does Sensai create tailored content?",
+    question: "How does Skill Spring create tailored content?",
     answer:
-      "Sensai learns about your industry, experience, and skills during onboarding. It then uses this information to generate customized resumes, cover letters, and interview questions. The content is specifically aligned with your professional background and industry standards, making it highly relevant and effective.",
-  },
-  {
-    question: "How accurate and up-to-date are Sensai's industry insights?",
-    answer:
-      "We update our industry insights weekly using advanced AI analysis of current market trends. This includes salary data, in-demand skills, and industry growth patterns. Our system constantly evolves to ensure you have the most relevant information for your career decisions.",
-  },
-  {
-    question: "Is my data secure with Sensai?",
-    answer:
-      "Absolutely. We prioritize the security of your professional information. All data is encrypted and securely stored using industry-standard practices. We use Clerk for authentication and never share your personal information with third parties.",
-  },
-  {
-    question: "How can I track my interview preparation progress?",
-    answer:
-      "Sensai tracks your performance across multiple practice interviews, providing detailed analytics and improvement suggestions. You can view your progress over time, identify areas for improvement, and receive AI-generated tips to enhance your interview skills based on your responses.",
+      "Skill Spring personalizes content by analyzing your skills, experience, industry, and career goals during onboarding. Using AI-powered algorithms and job market insights, it generates customized resumes, cover letters, career roadmaps, and interview questions that align with industry standards and job requirements. This ensures that every suggestion is highly relevant, effective, and tailored to your unique career path..",
   },
   {
     question: "Can I edit the AI-generated content?",
     answer:
-      "Yes! While Sensai generates high-quality initial content, you have full control to edit and customize all generated resumes, cover letters, and other content. Our markdown editor makes it easy to refine the content to perfectly match your needs.",
+      "Absolutely! Skill Spring provides AI-powered suggestions, but you have full control to edit and customize your resumes, cover letters, and career roadmaps. Our user-friendly editor allows you to refine and tweak the content to ensure it perfectly aligns with your personal style, goals, and job requirements.",
   },
+  {
+    question: "How accurate and up-to-date are Skill Spring's industry insights?",
+    answer:
+      "Skill Spring’s industry insights are AI-driven and updated weekly using real-time data analysis of job trends, salary benchmarks, and in-demand skills. Our AI continuously scans market trends to ensure you receive the most relevant and accurate career information, helping you make informed job decisions with confidence.",
+  },
+  
 ];

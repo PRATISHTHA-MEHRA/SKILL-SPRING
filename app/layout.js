@@ -1,3 +1,4 @@
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
@@ -14,37 +15,27 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (<ClerkProvider 
-    appearance={{
-      baseTheme:dark
-  }}>
+  return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.className}`}
-      >
-              <ThemeProvider
+      <body className={`${inter.className}`}>
+        <ClerkProvider appearance={{ baseTheme: dark }}>
+          <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
-            {/* header */}
-            <Header/>
+            <Header />
             <main className="min-h-screen">{children}</main>
-            <Toaster richColors/>
-            {/* {footer} */}
+            <Toaster richColors />
             <footer className="bg-muted/50 py-12">
               <div className="container mx-auto px-4 text-center text-gray-200">
-                <p> Made with love</p>
+                <p> Made in Nepal</p>
               </div>
             </footer>
-            
           </ThemeProvider>
-    
-
-         
+        </ClerkProvider>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
