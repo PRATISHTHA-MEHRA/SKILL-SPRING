@@ -18,15 +18,25 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react";
+import useFetch from "@/hooks/use-fetch";
+import { updateUser } from "@/actions/user";
 
 const OnboardingForm = ({ industries }) => {
   const [selectedIndustry, setSelectedIndustry] = useState(null);
   const router = useRouter();
+
+  const {
+    loading: updateLoading,
+    fn: updateUserfn,
+    data:updateResult,
+  }= useFetch(updateUser);
+  
 
   const {
     register,
@@ -39,8 +49,29 @@ const OnboardingForm = ({ industries }) => {
   });
 
   const onSubmit = async (values) => {
-    console.log(values);
+    try{
+      const formattedIndustry= `${values.industry}-${values.subIndustry
+      .toLowerCase()
+    .replace(/ /.g, "_")}`;
+
+    await updateUserfn({
+      ...values,
+      industry: formattedIndustry,
+    });
+    } catch(error) {
+      console.error("Onboarding error:",error);
+    }
   };
+
+  useEffect(() =>
+  {
+    if (updateResult?.success && !updateLoading){
+      toast.success("Profile completed successfully!");
+      router.push("/dashboard");
+      router.refresh();
+    }
+  }, [updateResult, updateLoading]);
+  
 
   const watchIndustry = watch("industry");
 
@@ -164,8 +195,18 @@ const OnboardingForm = ({ industries }) => {
               )}
             </div>
 
-            <Button type="submit" className="w-full">
-              Complete Profile
+            <Button type="submit" className="w-full" disabled={updateLoading}>
+              {updateLoading ? (
+                <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
+                Saving...
+                </>
+
+              ):(
+                "Complete Profile"
+
+              )}
+              
             </Button>
           </form>
         </CardContent>
