@@ -14,7 +14,7 @@ model User {
   name          String?
   imageUrl      String?
   industry      String    // Combined industry-subindustry (e.g., "tech-software-development")
-  industryInsight IndustryInsight? @relation(fields: [industry], references: [industry])
+  industryInsight IndustryInsight? @relation(fields: [industry], references: //  [industry])
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
@@ -70,7 +70,7 @@ model CoverLetter {
 }
 
 // Combined Industry Trends and Salary Insights
-model IndustryInsight {
+model industryInsight {
   id            String    @id @default(cuid())
   industry      String     // The industry this data belongs to (e.g., "tech-software-development")
   

@@ -184,14 +184,14 @@ const Header = () => {
                 <DropdownMenuItem asChild>
                   <Link href="/ai-cover-letter" className="flex items-center gap-2">
                     <PenBox className="h-4 w-4" />
-                    <span>Cover Letter</span>
+                    <span>Roadmap </span>
                   </Link>
                 </DropdownMenuItem>
 
                 <DropdownMenuItem asChild>
                   <Link href="/interview" className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4" />
-                    <span>Interview Prep</span>
+                    <span>Job Roles Suggestions</span>
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>

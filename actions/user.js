@@ -21,7 +21,7 @@ export async function updateUser(data) {
     const result = await db.$transaction(
       async (tx) => {
         // find if industry exists
-        let industryInsight = await tx.IndustryInsight.findUnique({
+        let industryInsight = await tx.industryInsight.findUnique({
           where: {
             industry: data.industry,
           },
@@ -71,14 +71,6 @@ export async function getUserOnboardingStatus() {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 
-  const user = await db.user.findUnique({
-    where: {
-      clerkUserId: userId,
-    },
-  });
-
-  if (!user) throw new Error("User not found");
-
   try {
     const user = await db.user.findUnique({
       where: {
@@ -88,6 +80,9 @@ export async function getUserOnboardingStatus() {
         industry: true,
       },
     });
+
+    if (!user) throw new Error("User not found");
+
 
     return {
       isOnboarded: !!user?.industry,
